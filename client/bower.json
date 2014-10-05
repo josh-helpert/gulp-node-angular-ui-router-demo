@@ -1,0 +1,28 @@
+{
+  "name": "Single identity, multiple accounts",
+  "description": "Universal identity server - Single location to share identity despite using various credentialing strategy.",
+  "version": "0.1.0",
+  "homepage": "",
+  "authors": [
+    "jhelpertmu@gmail.com"
+  ],
+  "keywords": [
+    "identity",
+    "passport",
+    "credential"
+  ],
+  "license": "All Rights Reserved",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-ui-router": "0.2.x",
+    "bootstrap": "~3.1.1",
+    "html5-boilerplate": "~4.3.0"
+  }
+}

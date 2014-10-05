@@ -1,0 +1,44 @@
+include templates/modal_edit_account
+
+//-div(ng-controller="ProviderCtrl")
+div
+  h2 Accounts
+  div
+    p Providers: \#{{providers.length}}
+    //-p {{providers | json}}
+    
+    ul.nav.nav-tabs
+      li(ng-class="{active: $parent.selectedTab == provider.name}", ng-repeat="provider in providers track by $index")
+        //-a(data-target="{{"/#" + provider.name}}", role="tab", data-toggle="tab") {{provider.name}}
+        //-a(href="{{"/#" + provider.name}}", role="tab", data-toggle="tab") {{provider.name}}
+        //-a(href="#", role="tab", ng-click="$parent.selectedTab = provider.name;", onclick="return false;", data-toggle="tab") {{provider.name}}
+        a(href="", role="tab", ng-click="$parent.selectedTab = provider.name;", data-toggle="tab") {{provider.name}}
+    .tab-content
+      div(id="{{provider.name}}", class="tab-pane fade in", ng-class="{active: $parent.selectedTab == provider.name}", ng-repeat="provider in providers track by $index")
+        p Provider Name: {{provider.name}} description: {{provider.description}}
+        
+        .table-responsive(ng-controller="AccountCtrl")
+          table(class="table table-striped table-hover table-condensed")
+            tr
+              td: input(id="termsCheck", type="checkbox", name="terms")
+              th Email
+              th Alias
+              th Is Active
+              th Status
+              th Actions
+            tr(ng-repeat="acct in provider.accounts track by $index | orderBy:alias")
+              td: input(id="termsCheck", type="checkbox", name="terms")
+              td {{acct.email}}
+              td {{acct.alias}}
+              td {{acct.is_active}}
+              td {{acct.status}}
+              td
+                //-<button type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
+                button.btn.btn-default.btn-xs(type="button", data-toggle="modal", data-target="#editAccnt", ng-click="edit($index);")
+                  span.glyphicon.glyphicon-pencil
+                button.btn.btn-default.btn-xs(type="button", ng-click="toggleEnabled($index);")
+                  span.glyphicon.glyphicon-ban-circle
+                button.btn.btn-default.btn-xs(type="button", data-toggle="modal", data-target="#delAccnt", ng-click="delete($index);")
+                  span.glyphicon.glyphicon-trash
+                //-mixin big_modal("editAccnt", "edit_account")
+                //-mixin big_modal("delAccnt", "delete_account")

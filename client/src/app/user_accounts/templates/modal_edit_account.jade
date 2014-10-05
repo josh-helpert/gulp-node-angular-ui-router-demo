@@ -1,0 +1,16 @@
+mixin big_modal(modal_id, label)
+  //-.modal.fade.in(id=modal_id, tabindex="-1", role="dialog", aria-labelledby=label, aria-hidden="true")
+  .modal.fade(id=modal_id, tabindex="-1", role="dialog", aria-labelledby=label, aria-hidden="true")
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          button.close(type="button", data-dismiss="modal")
+            span(aria-hidden="true") &times;
+            //-span(aria-hidden="true")x
+            span.sr-only Close
+          h4.modal-title Modal title
+        .modal-body
+          p One fine body&hellip;
+        .modal-footer
+          button.btn.btn-default(type="button", data-dismiss="modal") Close
+          button.btn.btn-primary(type="button") Save Changes

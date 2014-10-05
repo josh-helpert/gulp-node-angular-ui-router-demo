@@ -1,0 +1,30 @@
+ul.nav
+  //- TODO:
+        - Users tab for those who are "developer/destinations"
+          - HTTP/HTTPS or mixed
+          - Method of redirect for request/response (e.g. url on developer site, any tokens/crypto/tokens/nonce/etc)
+          - Serialization format of requests/response (JSON, XML, binary, etc.)
+          - DDOS prevention (e.g. response w/ a failure page or HTTP err)
+          - Cache control (for user logins)
+          - Session/cookie strategy
+          - 
+        - Manage your general privelages separate from your specific Provider
+          - Ideally can make very general rules (e.g. don"t share email account w/ anyone (only fake email), never share real address, no provider (unless specified strategy/security level) can access this data, etc.)
+        - Information regarding security level of each Provider and Strategy
+        - Mange provider-specific settings
+          - What user information they can have access to
+          - Should user be informed/confirm when an attempt to auth occurs (e.g. two-pass auth via SMS)
+            - Show developer/destination (w/ metadata about them) as well as metadata about request (e.g. ip address, user agent, host, etc.)
+          - 
+  li
+    a(ui-sref="home") Home
+  li
+    a(ui-sref="todo") Todo
+  li
+    a(ui-sref="view1") View1
+  li
+    a(ui-sref="view2") View2
+  li
+    a(ui-sref="providers") Providers
+  li
+    a(ui-sref="tab_test") Tab Test
